@@ -11,7 +11,7 @@ inputs:
     default: ''
 runs:
   using: 'docker'
-  image: 'mrgnlabs/solana-dev:0.0.2-alpha'
+  image: 'docker://mrgnlabs/solana-dev:0.0.2-alpha'
   entrypoint: shell-exec
   args: 
     - 'cargo test-bpf ${{ inputs.args }}'
