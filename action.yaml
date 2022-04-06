@@ -1,0 +1,17 @@
+name: 'Solana test-bpf'
+author: 'MRGN Labs'
+description: 'Run solana rust tests'
+branding:
+  icon: smile
+  color: purple
+inputs:
+  args:  # id of input
+    description: 'cargo test-bpf arguments'
+    required: false
+    default: ''
+runs:
+  using: 'docker'
+  image: 'mrgnlabs/solana-dev:0.0.2-alpha'
+  entrypoint: shell-exec
+  args: 
+    - 'cargo test-bpf ${{ inputs.args }}'
