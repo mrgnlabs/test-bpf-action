@@ -8,7 +8,7 @@ test:
     steps:
       - uses: actions/checkout@v2
       - name: Cargo Test BPF
-        uses: mrgnlabs/test-bpf-action@v0.2
+        uses: mrgnlabs/test-bpf-action@v0.1
         with:
           args: '--features=test -- --test-threads=1'
 ```
