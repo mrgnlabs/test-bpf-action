@@ -2,7 +2,7 @@ name: 'Solana test-bpf'
 author: 'MRGN Labs'
 description: 'Run solana rust tests'
 branding:
-  icon: smile
+  icon: aperture
   color: purple
 inputs:
   args:  # id of input
