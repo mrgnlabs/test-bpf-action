@@ -8,7 +8,8 @@ test:
     steps:
       - uses: actions/checkout@v2
       - name: Cargo Test BPF
-        uses: mrgnlabs/test-bpf-action@v0.1
+        uses: mrgnlabs/test-bpf-action@v0.3
         with:
-          args: '--features=test -- --test-threads=1'
+          args: '--features=test'
+          thread_stack_size: '4096000' # 4Mb
 ```
