@@ -5,13 +5,17 @@ branding:
   icon: aperture
   color: purple
 inputs:
-  args:  # id of input
+  args:
     description: 'cargo test-bpf arguments'
     required: false
     default: ''
+  thread_stack_size:
+    description: 'size of stack for spawned threads'
+    required: false
+    default: '8192000' # 4Mb
 runs:
   using: 'docker'
   image: 'docker://mrgnlabs/solana-dev:0.0.2-alpha'
   entrypoint: shell-exec
   args: 
-    - 'cargo test-bpf ${{ inputs.args }}'
+    - 'RUST_MIN_STACK=${{ inputs.thread_stack_size }} cargo test-bpf ${{ inputs.args }}'
